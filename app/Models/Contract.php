@@ -3,12 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Model;
 
-class Contract extends Model
+class contract extends Model
 {
-    //use HasFactory;
-
+   // use HasFactory;
     /**
      * The attributes that are mass assignable.
      *
@@ -18,12 +18,8 @@ class Contract extends Model
         'name',
         'path',
         'size',
-        'project_id',
-         'sector_id',
-        'zoneofinterest_id',
-            'ressource_id',
-            'contracttype_id',
-            'stateentite_id',
-            'comment_id',
+        'signaturedate',
+        
+        
     ];
 }

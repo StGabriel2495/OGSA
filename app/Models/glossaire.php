@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class illicitepractice extends Model
+class glossaire extends Model
 {
+    //use HasFactory;
+
     //use HasFactory;
     /**
      * The attributes that are mass assignable.
@@ -20,13 +22,11 @@ class illicitepractice extends Model
         
     ];
 
-    /**
-     * Get the comments for the blog post.
+         /**
+     * Get the post that owns the comment.
      */
-    public function glossaire(): HasMany
+    public function illicitepractice(): BelongsTo
     {
-        return $this->hasMany(Glossaire::class);
+        return $this->belongsTo(Illicitepractice::class);
     }
-
-    
 }

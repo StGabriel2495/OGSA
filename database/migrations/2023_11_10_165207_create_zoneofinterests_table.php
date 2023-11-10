@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('documenttypes', function (Blueprint $table) {
+        Schema::create('zoneofinterests', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('contract_id')->constrained();
+            $table->foreignId('illicitepractice_id')->constrained();
             $table->timestamps();
-
         });
     }
 
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('documenttypes');
+        Schema::dropIfExists('zoneofinterests');
     }
 };

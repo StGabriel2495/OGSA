@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('glossaires', function (Blueprint $table) {
             $table->id();
-            $table->string('subject');
+            $table->string('name');
             $table->text('description');
-            $table->string('file');
-            $table->boolean('statut');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('glossaires');
     }
 };

@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('zoneofinterests', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('subject');
+            $table->text('description');
+            $table->string('path');
+            $table->boolean('statut');
             $table->timestamps();
-            $table->foreignId('illicitepractice_id')->constrained();
         });
     }
 
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('zoneofinterests');
+        Schema::dropIfExists('comments');
     }
 };

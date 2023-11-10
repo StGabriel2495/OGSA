@@ -2,13 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Model;
 
 class zoneofinterest extends Model
 {
    // use HasFactory;
-
    /**
      * The attributes that are mass assignable.
      *
@@ -16,6 +15,13 @@ class zoneofinterest extends Model
      */
     protected $fillable = [
         'name',
-        'illicitepractice',
     ];
+
+    /**
+     * Get the comments for the blog post.
+     */
+    public function illicitepractice(): HasMany
+    {
+        return $this->hasMany(Illicitepractice::class);
+    }
 }
